@@ -1,0 +1,21 @@
+:host {
+    display: block;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+  }
+  
+  p {
+    margin-bottom: 10px;
+  }
+  
+  .btn-secondary {
+    margin-top: 20px;
+  }
+  button {
+    margin-top: 10px; 
+  }
+  

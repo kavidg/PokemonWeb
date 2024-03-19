@@ -1,0 +1,44 @@
+body {
+  background-image: url('../../assets/pokebg.png');
+  background-size: cover; 
+  background-position: center; 
+  margin: 0; 
+  padding: 0; 
+}
+  .container {
+    min-height: 100vh; 
+  }
+  .list-group {
+    width: 100%; 
+  }
+  img{
+    height: 60px;
+    width: 160px;
+  }
+  .filter-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    }
+    h6 {
+        margin-top: 20px;
+    }
+  .pagination-buttons {
+    position: fixed; 
+    bottom: 10px; 
+    width: 100%;
+    left: 0; 
+    display: flex; 
+    justify-content: space-between; 
+    padding: 0 100px; 
+}
+.select-container {
+    display: flex;
+    justify-content: center; 
+    margin-bottom: 10px; 
+    align-items: center; 
+}
+
+.form-select {
+    width: 200px; /* Define el ancho deseado */
+}

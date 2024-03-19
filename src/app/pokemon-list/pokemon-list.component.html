@@ -1,0 +1,41 @@
+<body>
+<div *ngIf="pokemons" class="container">
+  <div>
+    <div class="filter-container">
+      <img src="../../assets/pokemon.png" alt="Descripción de la imagen" class="pokemon-type-image">
+    </div>
+    <div class="filter-container">
+      <h6 for="typeFilter" class="form-label">Filtrar por tipo de Pokemon:</h6>
+    </div>
+    <!-- Opciones de filtro -->
+    <div class="filter-container">
+      <select class="form-select select-container" (change)="filterPokemonByType($event)">
+        <option value="">Todos</option>
+        <option *ngFor="let type of types" [value]="type.name">{{ type.name }}</option>
+      </select>
+    </div>
+  </div>
+  
+  <!-- Lista de Pokemons -->
+  <div class="text-center">
+    <div class=" list-group">
+      <ng-container *ngIf="filteredPokemons.length > 0; else emptyList">
+        <a (click)="showDetails(pokemon.name)" href="javascript:void(0)" class="list-group-item list-group-item-action" *ngFor="let pokemon of filteredPokemons">
+          <h5>{{ pokemon.name }}</h5>
+          <app-pokemon-detail [name]="pokemon.name" *ngIf="selectedPokemon === pokemon.name"></app-pokemon-detail>
+        </a>
+      </ng-container>
+      <!-- Si filteredPokemons esta vacio, muestra un mensaje -->
+      <ng-template #emptyList>
+        <div class="alert alert-info" role="alert">
+          En la lista actual no hay Pokemons de ese tipo.
+        </div>
+      </ng-template>
+    </div>
+  </div>
+  <div class="pagination-buttons">
+    <button class="btn btn-primary" [disabled]="page === 1" (click)="getPreviousPage()">Página anterior</button>
+    <button class="btn btn-primary" (click)="getNextPage()">Página siguiente</button>
+  </div>
+</div>
+</body>
